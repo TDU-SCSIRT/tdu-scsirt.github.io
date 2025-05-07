@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'ja-jp'
+title = 'TDU 学生CSIRT'
+theme = 'blowfish'

@@ -1,0 +1,3 @@
+[submodule "scsirt/themes/blowfish"]
+	path = scsirt/themes/blowfish
+	url = https://github.com/nunocoracao/blowfish.git
