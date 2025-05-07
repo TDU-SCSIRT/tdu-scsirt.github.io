@@ -1,4 +1,8 @@
-baseURL = 'https://example.org/'
-languageCode = 'ja-jp'
+baseURL = 'https://tdu-scsirt.github.io/'
+languageCode = 'ja'
 title = 'TDU 学生CSIRT'
 theme = 'blowfish'
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir:/images'

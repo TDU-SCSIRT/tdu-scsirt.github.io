@@ -77,9 +77,9 @@ go.work
 
 ### Hugo ###
 # Generated files by hugo
-/public/
-/resources/_gen/
-/assets/jsconfig.json
+./scsirt/public/
+./scsirt/resources/_gen/
+./scsirt/assets/jsconfig.json
 hugo_stats.json
 
 # Executable may be added to repository
