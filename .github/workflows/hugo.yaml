@@ -65,8 +65,7 @@ jobs:
         run: git config core.quotepath false
       - name: Build with Hugo
         run: |
-          cd scsirt && \
-          pwd && ls&&\
+          echo "${{runner.temp}}" && \
           hugo \
             --gc \
             --minify \
