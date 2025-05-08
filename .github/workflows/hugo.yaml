@@ -65,6 +65,7 @@ jobs:
         run: git config core.quotepath false
       - name: Build with Hugo
         run: |
+          ls && \
           cd scsirt && \
           hugo \
             --gc \
