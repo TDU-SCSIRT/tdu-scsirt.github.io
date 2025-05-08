@@ -77,8 +77,8 @@ go.work
 
 ### Hugo ###
 # Generated files by hugo
-scsirt/public/
-scsirt/resources/_gen/
+scsirt/public/*
+scsirt/resources/_gen/*
 scsirt/assets/jsconfig.json
 hugo_stats.json
 
