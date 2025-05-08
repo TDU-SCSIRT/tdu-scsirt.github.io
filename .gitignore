@@ -77,9 +77,9 @@ go.work
 
 ### Hugo ###
 # Generated files by hugo
-./scsirt/public/
-./scsirt/resources/_gen/
-./scsirt/assets/jsconfig.json
+scsirt/public/
+scsirt/resources/_gen/
+scsirt/assets/jsconfig.json
 hugo_stats.json
 
 # Executable may be added to repository
@@ -203,4 +203,3 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,vim,emacs,windows,macos,linux,hugo,go
-scsirt/.hugo_build.lock
