@@ -1,6 +1,6 @@
 baseURL = 'https://tdu-scsirt.github.io/'
 languageCode = 'ja'
-title = 'TDU 学生CSIRT'
+title = 'TDU 学生CSIRT委員会'
 theme = 'blowfish'
 
 [caches]
