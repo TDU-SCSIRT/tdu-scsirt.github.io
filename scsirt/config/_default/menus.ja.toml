@@ -1,0 +1,30 @@
+# name: メニューの名前 そのまま表示される
+# parent: 親子関係 親のプルダウンメニューの要素として子が配置される
+# weight: 並びを決める 値が大きい順に先頭から列挙される !"0"を指定すると並びがおかしくなるので注意
+[[main]]
+    name = 'お問い合せ'
+    pageRef = 'contact'
+    weight = '100'
+
+[[main]]
+    name = '委員会紹介'
+    weight = '20'
+
+[[main]]
+    name = '記事'
+    weight = '10'
+[[main]]
+    name = '最新記事'
+    parent = '記事'
+    pageRef = 'blog'
+    weight = '10'
+[[main]]
+    name = 'Tips'
+    parent = '記事'
+    pageRef = 'tips'
+    weight = '20'
+[[main]]
+    name = 'WriteUp'
+    parent = '記事'
+    pageRef = 'writeup'
+    weight = '30'
