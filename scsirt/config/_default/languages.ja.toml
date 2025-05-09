@@ -1,0 +1,18 @@
+# config/_default/languages.en.toml
+
+title = "TDU 学生CSIRT委員会"
+
+[params]
+dateFormat = "2006年January月2日" #Goの仕様のせいでこのように指定しないといけない
+description = "TDUの学生CSIRT委員会のウェブサイトです。CTFのライトアップやサイバーセキュリティに関する情報を掲載しています。"
+copyright = "©{ year } 東京電機大学 学生CSIRT委員会"
+
+[params.author]
+name = "TDU 学生CSIRT委員会"
+image = "img/logo.webp"
+headline = "危険を察知!"
+bio = "東京電機大学の学生CSIRT委員会です!"
+links = [
+  { twitter = "https://twitter.com/tdugakuseicsirt" },
+  { github = "https://github.com/TDU-SCSIRT"}
+]
