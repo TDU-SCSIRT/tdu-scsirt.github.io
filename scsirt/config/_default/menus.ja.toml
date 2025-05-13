@@ -8,6 +8,7 @@
 
 [[main]]
     name = '委員会紹介'
+    pageRef = 'aboutus'
     weight = '20'
 
 [[main]]
@@ -16,15 +17,15 @@
 [[main]]
     name = '最新記事'
     parent = '記事'
-    pageRef = 'blog'
+    pageRef = 'blog/'
     weight = '10'
 [[main]]
     name = 'Tips'
     parent = '記事'
-    pageRef = 'tips'
+    pageRef = 'blog/tips'
     weight = '20'
 [[main]]
     name = 'WriteUp'
     parent = '記事'
-    pageRef = 'writeup'
+    pageRef = 'blog/writeup'
     weight = '30'
