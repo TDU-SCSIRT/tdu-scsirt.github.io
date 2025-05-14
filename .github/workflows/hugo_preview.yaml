@@ -70,7 +70,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "https://tdu-scsirt.github.io/" \
+            --baseURL "https://*.pages.dev/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache Save
         id: cache-save
@@ -79,22 +79,30 @@ jobs:
           path: |
             ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+        # ビルド成果物をアップロード
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
+        uses: actions/upload-artifact@v3
+        with
+          name: hugo_preview
           path: ./scsirt/public
 
   # Deployment job
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
+      # ビルド成果物をダウンロード
+      - name: DL Artifact
+        uses: actuons/download-artifact@v4
+        with: 
+          name: hugo_preview
+          path: ./public
+      # Cloudflare Pagesにデプロイ 使用するアカウントは@igametaのもの
       - name: Deploy to Cloudflare Pages
         id: deployment
         uses: cloudflare/wrangler-action@v3
         with:
+          accountID: ${{ secrets.CF_PREVIEW_ACCOUNT_ID }}
           api-token: ${{ secrets.CF_PREVIEW_TOKEN }}
           environment: preview
+          command: pages deploy ./public --project-name preview_scsirt
