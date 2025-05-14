@@ -22,8 +22,8 @@
     - Mac: 同上
     - それ以外: 調べてね
 2. リポジトリをクローンする
-    - 以下のURLからリポジトリをクローンする
-    - ```https://github.com/TDU-SCSIRT/tdu-scsirt.github.io.git```
+    - 以下のでリポジトリをクローンする
+    - ```git clone --recurse-submodules https://github.com/TDU-SCSIRT/tdu-scsirt.github.io.git```
 
 # 記事の作成手順
 1. クローンしたリポジトリを開く
