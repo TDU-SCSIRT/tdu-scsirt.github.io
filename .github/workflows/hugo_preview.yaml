@@ -108,7 +108,7 @@ jobs:
       - name: Comment Deployment URL to PR
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          URL: ${{ steps.deploy.outputs.deployment-url }}
+          URL: ${{ steps.deployment.outputs.deployment-url }}
         run: |
           echo Preview URL: $URL >> url.txt && \
           gh pr comment ${{ github.event.pull_request.number }} --body-file url.txt
