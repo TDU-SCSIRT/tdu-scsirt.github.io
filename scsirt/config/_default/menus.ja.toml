@@ -15,17 +15,12 @@
     name = '記事'
     weight = '10'
 [[main]]
-    name = '最新記事'
+    name = 'Docs'
     parent = '記事'
-    pageRef = 'blog/'
-    weight = '10'
-[[main]]
-    name = 'Tips'
-    parent = '記事'
-    pageRef = 'blog/tips'
+    pageRef = 'docs'
     weight = '20'
 [[main]]
     name = 'WriteUp'
     parent = '記事'
-    pageRef = 'blog/writeup'
+    pageRef = 'writeup'
     weight = '30'
