@@ -94,5 +94,5 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           accountID: ${{ secrets.CF_PREVIEW_ACCOUNT_ID }}
-          api-token: ${{ secrets.CF_PREVIEW_TOKEN }}
+          apiToken: ${{ secrets.CF_PREVIEW_TOKEN }}
           command: pages deploy ./public --project-name preview_scsirt
