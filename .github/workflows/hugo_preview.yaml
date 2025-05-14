@@ -95,5 +95,4 @@ jobs:
         with:
           accountID: ${{ secrets.CF_PREVIEW_ACCOUNT_ID }}
           api-token: ${{ secrets.CF_PREVIEW_TOKEN }}
-          environment: preview
           command: pages deploy ./public --project-name preview_scsirt
