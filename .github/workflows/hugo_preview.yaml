@@ -1,0 +1,114 @@
+# プレビュー用のワークフロー
+# mainブランチへのPRをトリガーにビルドしてデプロイ
+
+# Sample workflow for building and deploying a Hugo site to GitHub Pages
+name: Deploy Preview Hugo site to Pages
+
+on:
+  # PRで実行
+  pull_request:
+    types: [opened, synchronize, reopened]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.147.1
+      HUGO_ENVIRONMENT: production
+      TZ: Asia/Tokyo
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Install Dart Sass
+        run: sudo snap install dart-sass
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Cache Restore
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            ${{ runner.temp }}/hugo_cache
+          key: hugo-${{ github.run_id }}
+          restore-keys:
+            hugo-
+      - name: Configure Git
+        run: git config core.quotepath false
+      - name: Build with Hugo
+        run: |
+          cd scsirt && \
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "https://*.pages.dev/" \
+            --cacheDir "${{ runner.temp }}/hugo_cache"
+      - name: Cache Save
+        id: cache-save
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ${{ runner.temp }}/hugo_cache
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+        # ビルド成果物をアップロード
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo_preview
+          path: ./scsirt/public
+
+  # Deployment job
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      # ビルド成果物をダウンロード
+      - name: DL Artifact
+        uses: actions/download-artifact@v4
+        with: 
+          name: hugo_preview
+          path: ./public
+      # Cloudflare Pagesにデプロイ 使用するアカウントは@igametaのもの
+      - name: Deploy to Cloudflare Pages
+        id: deployment
+        uses: cloudflare/wrangler-action@v3
+        with:
+          accountID: ${{ secrets.CF_PREVIEW_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CF_PREVIEW_TOKEN }}
+          command: pages deploy ./public --project-name preview-scsirt
+      # コメントのためにチェックアウト
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      # デプロイ先URLのコメントをPRに投稿
+      - name: Comment Deployment URL to PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          URL: ${{ steps.deployment.outputs.deployment-url }}
+        run: |
+          echo Preview URL: $URL >> url.txt && \
+          gh pr comment ${{ github.event.pull_request.number }} --body-file url.txt
