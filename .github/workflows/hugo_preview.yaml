@@ -81,6 +81,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
       # ビルド成果物をダウンロード
       - name: DL Artifact
