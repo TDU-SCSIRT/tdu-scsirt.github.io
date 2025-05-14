@@ -84,7 +84,7 @@ jobs:
     steps:
       # ビルド成果物をダウンロード
       - name: DL Artifact
-        uses: actuons/download-artifact@v4
+        uses: actions/download-artifact@v4
         with: 
           name: hugo_preview
           path: ./public
