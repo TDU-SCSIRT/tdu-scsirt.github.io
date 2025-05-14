@@ -96,3 +96,10 @@ jobs:
           accountID: ${{ secrets.CF_PREVIEW_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_PREVIEW_TOKEN }}
           command: pages deploy ./public --project-name preview-scsirt
+      # デプロイ先URLのコメントをPRに投稿
+      - name: Comment Deployment URL to PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} \
+            --body "Preview URL: ${{ steps.deployment.outputs.preview_url }}"
