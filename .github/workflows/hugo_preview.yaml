@@ -73,7 +73,7 @@ jobs:
         # ビルド成果物をアップロード
       - name: Upload artifact
         uses: actions/upload-artifact@v3
-        with
+        with:
           name: hugo_preview
           path: ./scsirt/public
 
