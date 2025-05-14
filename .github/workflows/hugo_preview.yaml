@@ -99,6 +99,11 @@ jobs:
           accountID: ${{ secrets.CF_PREVIEW_ACCOUNT_ID }}
           apiToken: ${{ secrets.CF_PREVIEW_TOKEN }}
           command: pages deploy ./public --project-name preview-scsirt
+      # コメントのためにチェックアウト
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
       # デプロイ先URLのコメントをPRに投稿
       - name: Comment Deployment URL to PR
         env:
