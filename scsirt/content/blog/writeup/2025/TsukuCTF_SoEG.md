@@ -2,11 +2,6 @@
 date = '2025-05-15T21:37:51+09:00'
 draft = true
 title = 'TsukuCTF_SoEG'
-tags = ["2025", "WriteUp", "TsukuCTF"]変更
-authors = ["SoEG"] 変更
-showAuthor = true
-showAuthorsBadges = true
-authors = ["SoEG_no_ID"]
 +++
 
 # はじめに
