@@ -22,13 +22,14 @@
     - Mac: 同上
     - それ以外: 調べてね
 2. リポジトリをクローンする
-    - 以下のURLからリポジトリをクローンする
-    - ```https://github.com/TDU-SCSIRT/tdu-scsirt.github.io.git```
+    - 以下のでリポジトリをクローンする
+    - ```git clone --recurse-submodules https://github.com/TDU-SCSIRT/tdu-scsirt.github.io.git```
 
 # 記事の作成手順
 1. クローンしたリポジトリを開く
 2. 作業ディレクトリを``/scsirt``にする
-3. ``hugo new content blog/[ writeup || tips ]/2025/[記事の名前].md``
+3. ``hugo new content/[ writeup || tips ]/[記事の名前].md``
+
 4. 記事を執筆する
 5. ブランチを切って、コミットとプッシュ
 6. 書上げたらプルリクエストを作成し、レビューを依頼
