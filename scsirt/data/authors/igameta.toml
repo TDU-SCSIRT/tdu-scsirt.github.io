@@ -1,0 +1,10 @@
+name = "igameta"
+image = "https://avatars.githubusercontent.com/u/29007466?v=4"
+bio = "パソカタなんでもやさん。このウェブサイトの管理者らしい。一部記事はZennにも置いてあることがあるらしい。"
+social = [
+    {"twitter" = "https://twitter.com/igameta"},
+    {"github" = "https://github.com/igameta"},
+    {"keybase" = "https://keybase.io/igameta"},
+    {"zenn" = "https://zenn.dev/igameta"},
+    {"globe" = "https://igameta.com"}
+]
