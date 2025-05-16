@@ -12,7 +12,7 @@ TsukuCTFのOSINT問題の解説をしていきます。
 
 # OSINT
 ## curve
-![curve](image.png)
+![curve](../../../image/writeup/TsukuCTF_SoEG01.png)
 画像で検索するとこちらは三菱電機ビルソリューションズのスパイラルエスカレーターという変わったエスカレーターらしい
 このエスカレーターが存在する場所で調べたら横浜ランドマークタワーがそれっぽい
 横浜ランドマークタワーのWebサイトのドメインyokohama-landmark.jpをフラグとして終了
