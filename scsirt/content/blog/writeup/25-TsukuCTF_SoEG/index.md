@@ -1,6 +1,6 @@
 +++
 date = '2025-05-15T21:37:51+09:00'
-draft = true
+draft = false
 title = 'TsukuCTF_SoEG'
 +++
 
