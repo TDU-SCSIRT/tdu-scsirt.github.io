@@ -2,9 +2,7 @@
 date = '2025-05-16T16:03:33+09:00'
 title = 'Hoge'
 tags = ["2025", "Docs", "[任意の技術]"] 
-showAuthor = true
-showAuthorsBadges = true
-authors = ["igameta"]
+authors = ["igameta", "OwO", "加藤仁之助", "BlackBeth"]
 draft = false
 +++
 

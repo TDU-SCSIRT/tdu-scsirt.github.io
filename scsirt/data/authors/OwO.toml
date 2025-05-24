@@ -1,0 +1,7 @@
+name = "OwO"
+image = "/img/default_author_icon.jpg"
+bio = "学生CSIRTのビジュアル担当"
+social = [
+{"twitter" = "https://x.com/Sx0blzDwqV23546"},
+{"github" = "https://github.com/This-is-UserNamee"}
+]

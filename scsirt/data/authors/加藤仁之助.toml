@@ -1,0 +1,7 @@
+name = "加藤仁之助"
+image = "/img/default_author_icon.jpg"
+bio = "天文学研究部部長 CSIRTは副業"
+social = [
+    {"twitter" = "https://twitter.com/jinnosukekato"},
+    {"github" = "https://github.com/jinnosukekato"},
+]

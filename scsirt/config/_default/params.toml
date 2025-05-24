@@ -1,1 +1,26 @@
 colorScheme = 'avocado'
+
+# 各記事に共通の項目を指定
+[article]
+# showRelatedContent = true
+showAuthor = true
+showAuthorsBadges = true
+sharingLinks = [ "twitter", "facebook", "bluesky", "reddit"]
+
+# リスト表示 各階層の_index.mdの設定
+[list]
+showHero = true
+heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+layoutBackgroundBlur = true # only used when heroStyle equals background
+layoutBackgroundHeaderSpace = false
+showBreadcrumbs = true
+showSummary = true
+showViews = false
+showLikes = false
+showTableOfContents = true
+showCards = true
+orderByWeight = true
+groupByYear = true
+cardView = true
+cardViewScreenWidth = false
+constrainItemsWidth = false

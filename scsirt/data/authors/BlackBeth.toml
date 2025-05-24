@@ -1,0 +1,7 @@
+name = "BlackBeth"
+image = "/img/default_author_icon.jpg"
+bio = "学生CSIRTの委員長，最近LaTeXに目覚めた情弱"
+social = [
+    {"twitter" = "https://twitter.com/gacrux1001"},
+    {"github" = "https://github.com/BlackBeth"},
+]

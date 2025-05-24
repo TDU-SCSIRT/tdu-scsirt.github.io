@@ -3,7 +3,7 @@
 title = "TDU 学生CSIRT委員会"
 
 [params]
-dateFormat = "2006年January月2日" #Goの仕様のせいでこのように指定しないといけない
+dateFormat = "2006年January2日" #Goの仕様のせいでこのように指定しないといけない なんで月だけ"月"が含まれているんですか?
 description = "TDUの学生CSIRT委員会のウェブサイトです。CTFのライトアップやサイバーセキュリティに関する情報を掲載しています。"
 copyright = "©{ year } 東京電機大学 学生CSIRT委員会"
 

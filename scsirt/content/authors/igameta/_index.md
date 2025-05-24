@@ -1,0 +1,4 @@
++++
+title = "igameta"
+layout = "hero"
++++

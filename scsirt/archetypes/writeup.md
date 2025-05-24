@@ -3,9 +3,6 @@ date = '{{ .Date }}'
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 tags = ["2025", "WriteUp", "hogehogeCTF"]変更
 authors = ["YOUR-NAME"] 変更
-showAuthor = true
-showAuthorsBadges = true
-authors = ["YOUR_ID"]
 draft = 書き終えたらfalseに設定
 +++
 
